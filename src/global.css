@@ -13,6 +13,7 @@
     --danger: #E25858;
 
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -39,4 +40,12 @@ body {
     height: 48px;
     left: 657px;
     top: 72px;
+}
+
+.todoContent {
+    position: absolute;
+    width: 736px;
+    height: 54px;
+    left: calc(50% - 736px/2);
+    top: 173px;
 }

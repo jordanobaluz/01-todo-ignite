@@ -1,0 +1,95 @@
+.newTask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+
+
+}
+
+.newTask input {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+
+    width: 638px;
+    height: 54px;
+
+    background: var(--gray-500);
+
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.newTask button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+
+    width: 90px;
+    height: 52px;
+
+    background: var(--blue-dark);
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+    cursor: pointer;
+
+    color: var(--gray-100);
+}
+
+.inputText {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+
+    width: 638px;
+    height: 54px;
+
+    background: var(--gray-500);
+
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+
+    font-size: 1rem;
+    color: var(--gray-100);
+}
+
+.buttonPlus {
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
