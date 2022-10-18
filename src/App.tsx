@@ -3,6 +3,7 @@ import { NewTask } from './components/NewTask'
 
 import logoToDo from './assets/logoToDo.svg'
 import './global.css'
+import { Task } from './components/Task'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </header>
       <div className='todoContent'>
         <NewTask />
+        <Task />
       </div>
     </div>
   )
