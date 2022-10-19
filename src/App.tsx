@@ -13,7 +13,7 @@ function App() {
       </header>
       <div className='todoContent'>
         <NewTask />
-        <Task />
+        <Task job={"Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."} />
       </div>
     </div>
   )
