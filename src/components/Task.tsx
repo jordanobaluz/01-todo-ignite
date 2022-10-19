@@ -1,7 +1,12 @@
 import styles from './Task.module.css';
-import { ClipboardText } from 'phosphor-react';
+import { ClipboardText, Trash } from 'phosphor-react';
 
-export function Task() {
+interface Task {
+    job: string
+    hasTask?: boolean
+}
+
+export function Task({ job, hasTask }: Task) {
     return (
         <div className={styles.tasks}>
             <div className={styles.info}>
@@ -15,11 +20,19 @@ export function Task() {
                 </div>
 
             </div>
-            <div className={styles.empty}>
-                <ClipboardText size={56} />
-                <p>Você ainda não tem tarefas cadastradas
-                    Crie tarefas e organize seus itens a fazer</p>
-            </div>
+            {job ?
+                <div className={hasTask ? styles.empty : styles.listTask}>
+                    <input type='checkbox' className={styles.checkbox} />
+                    <p>{job}</p>
+                    <button>
+                        <Trash className={styles.trash} size={32} />
+                    </button>
+                </div> :
+                <div>
+                    <ClipboardText size={56} />
+                    <h1>VAZIO</h1>
+                </div>
+            }
         </div>
     )
 }

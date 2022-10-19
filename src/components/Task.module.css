@@ -9,7 +9,7 @@
     width: 46rem;
     height: 17.938rem;
     left: calc(50% - 46rem/2);
-    top: 18.188rem;
+    top: 10rem;
 }
 
 .info {
@@ -130,5 +130,80 @@
     align-self: stretch;
     flex-grow: 0;
 
+    color: var(--gray-300);
+}
+
+.listTask {
+    /* Task */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 12px;
+
+    width: 736px;
+    height: 72px;
+
+    /* Gray 500 */
+
+    background: #262626;
+    /* Gray 400 */
+
+    border: 1px solid #333333;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.checkbox {
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    /* background-color: #eee; */
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    appearance: none;
+    /* -webkit-appearance: none; */
+    /* outline: none; */
+    cursor: pointer;
+}
+
+.checkbox:checked {
+
+    background: var(--purple-dark);
+    border: none;
+    /* appearance: auto; */
+    clip-path: circle(50% at 50% 50%);
+    color: var(--purple-dark);
+}
+
+.listTask button {
+    background: transparent;
+    border: 0;
+    color: var(--gray-400);
+    cursor: pointer;
+    line-height: 0;
+    /*ajusta o tamanho da bordar ao redor do botão*/
+    border-radius: 2px;
+}
+
+
+.trash {
+    flex: none;
+    order: 2;
+    flex-grow: 0;
     color: var(--gray-300);
 }
