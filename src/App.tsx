@@ -5,6 +5,14 @@ import logoToDo from './assets/logoToDo.svg'
 import './global.css'
 import { Task } from './components/Task'
 
+interface ITasks {
+  id: string;
+  taskName: string;
+  done: boolean;
+}
+
+const taskApp = ['']
+
 function App() {
   return (
     <div className="App">
@@ -12,8 +20,8 @@ function App() {
         <img src={logoToDo} alt="logo da aplicação do do" />
       </header>
       <div className='todoContent'>
-        <NewTask />
-        <Task job={"Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."} />
+        <NewTask tasks={taskApp} />
+        <Task jobs={taskApp} />
       </div>
     </div>
   )
