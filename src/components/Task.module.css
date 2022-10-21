@@ -106,10 +106,7 @@
 
 .empty {
     box-sizing: border-box;
-
-
     /* Auto layout */
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,31 +132,20 @@
 
 .listTask {
     /* Task */
-
-
     box-sizing: border-box;
-
     /* Auto layout */
-
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
     padding: 16px;
     gap: 12px;
 
-    width: 736px;
-    height: 72px;
+    background: var(--gray-500);
 
-    /* Gray 500 */
-
-    background: #262626;
-    /* Gray 400 */
-
-    border: 1px solid #333333;
+    border: 1px solid var(--gray-400);
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
     border-radius: 8px;
-
-    /* Inside auto layout */
 
     flex: none;
     order: 0;
@@ -167,27 +153,22 @@
     flex-grow: 0;
 }
 
-.checkbox {
-    top: 0;
-    left: 0;
-    height: 24px;
-    width: 24px;
-    /* background-color: #eee; */
+input[type="checkbox"] {
+    height: 1.15rem;
+    width: 1.15rem;
+    background: var(--gray-500);
     border: 2px solid var(--blue);
     border-radius: 50%;
     appearance: none;
-    /* -webkit-appearance: none; */
-    /* outline: none; */
     cursor: pointer;
+    transition: border 0.2s, color 0.4s;
 }
 
-.checkbox:checked {
-
-    background: var(--purple-dark);
+input[type="checkbox"]:checked {
+    color: aliceblue;
+    background: var(--purple-dark) url("../assets/check.svg") center no-repeat;
+    background-size: 1rem;
     border: none;
-    /* appearance: auto; */
-    clip-path: circle(50% at 50% 50%);
-    color: var(--purple-dark);
 }
 
 .listTask button {
