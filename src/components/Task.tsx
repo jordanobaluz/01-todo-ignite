@@ -10,17 +10,7 @@ interface ITask {
 export function Task({ id, name, isCheck }: ITask) {
     return (
         <div className={styles.tasks}>
-            <div className={styles.info}>
-                <div className={styles.tasksCreated}>
-                    <p>Tarefas Criadas</p>
-                    <span className={styles.count}>0</span>
-                </div>
-                <div className={styles.taskDone}>
-                    <p>Concluidas</p>
-                    <span className={styles.count}>0</span>
-                </div>
 
-            </div>
             {name ?
                 <div className={styles.listTask}>
                     <input type='checkbox' className={styles.checkbox} />

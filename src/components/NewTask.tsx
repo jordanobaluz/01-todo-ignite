@@ -1,15 +1,25 @@
 import styles from './NewTask.module.css';
 import { PlusCircle } from 'phosphor-react';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
+interface iTaskApp {
+    id: number;
+    name: string;
+    isCheck: boolean
+}
 
 export function NewTask(taskApp: any) {
-    const [tasks, setTasks] = useState(['1'])
+    const [tasks, setTasks] = useState(Array<iTaskApp>)
     const [newTask, setNewTask] = useState('');
 
     function handleSubmit(event: FormEvent) {
         event.preventDefault()
-        setTasks([...tasks, newTask])
+        setTasks([...taskApp.tasks, {
+            id: uuidv4(),
+            name: newTask,
+            isCheck: false
+        }])
         setNewTask('')
     }
 
