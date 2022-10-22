@@ -1,0 +1,131 @@
+.todoHeader {
+    position: absolute;
+    height: 200px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    background: var(--gray-700);
+}
+
+.todoHeader img {
+    position: absolute;
+    width: 126px;
+    height: 48px;
+    left: 657px;
+    top: 72px;
+}
+
+.newTask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+}
+
+.createNewTask {
+    position: absolute;
+    width: 736px;
+    height: 54px;
+    left: calc(50% - 736px/2);
+    top: 10.5rem;
+}
+
+.todoContent {
+    position: absolute;
+    width: 736px;
+    height: 28rem;
+    left: calc(50% - 736px/2);
+    top: 20rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1rem;
+
+    width: 46rem;
+    height: 1.19rem;
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.tasksCreated {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 0.5rem;
+
+    width: 8.688rem;
+    height: 1.188rem;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.tasksCreated p {
+    width: 6.62rem;
+    height: 1.063rem;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 17px;
+
+    color: var(--blue);
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.count {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 8px;
+    gap: 0.625rem;
+
+    width: 1.563rem;
+    height: 1.188rem;
+
+    background: var(--gray-400);
+    border-radius: 999px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.taskDone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 0.5rem;
+
+    width: 6.938rem;
+    height: 1.188rem;
+}
+
+.taskDone>p {
+    width: 4.875rem;
+    height: 1.063rem;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.063rem;
+
+    color: var(--purple);
+}
