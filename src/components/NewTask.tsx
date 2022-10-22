@@ -9,7 +9,7 @@ export function NewTask(taskApp: any) {
 
     function handleSubmit(event: FormEvent) {
         event.preventDefault()
-        setTasks([...taskApp, newTask])
+        setTasks([...tasks, newTask])
         setNewTask('')
     }
 

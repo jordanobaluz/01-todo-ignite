@@ -11,7 +11,15 @@ interface ITasks {
   done: boolean;
 }
 
-const taskApp = ['']
+const taskApp = [{
+  id: 1,
+  nameTask: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+  isCheck: false
+}, {
+  id: 2,
+  nameTask: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+  isCheck: false
+}]
 
 function App() {
   return (
@@ -21,7 +29,11 @@ function App() {
       </header>
       <div className='todoContent'>
         <NewTask tasks={taskApp} />
-        <Task jobs={taskApp} />
+        {taskApp.map(tasks => {
+          return (
+            <Task key={tasks.id} id={tasks.id} name={tasks.nameTask} isCheck={tasks.isCheck} />
+          )
+        })}
       </div>
     </div>
   )

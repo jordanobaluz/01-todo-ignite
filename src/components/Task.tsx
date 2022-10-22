@@ -1,12 +1,13 @@
 import styles from './Task.module.css';
 import { ClipboardText, Trash } from 'phosphor-react';
 
-interface Task {
-    jobs: string[]
-    hasTask?: boolean
+interface ITask {
+    id: number;
+    name: string;
+    isCheck: boolean
 }
 
-export function Task({ jobs, hasTask }: Task) {
+export function Task({ id, name, isCheck }: ITask) {
     return (
         <div className={styles.tasks}>
             <div className={styles.info}>
@@ -20,10 +21,10 @@ export function Task({ jobs, hasTask }: Task) {
                 </div>
 
             </div>
-            {jobs ?
+            {name ?
                 <div className={styles.listTask}>
                     <input type='checkbox' className={styles.checkbox} />
-                    {jobs.map(job => { return (<p>{job}</p>) })}
+                    <p>{name}</p>
                     <button>
                         <Trash className={styles.trash} size={32} />
                     </button>
