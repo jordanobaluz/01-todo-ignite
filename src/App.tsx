@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import logoToDo from './assets/logoToDo.svg'
 import './global.css'
 import styles from './App.module.css'
+import { EmptyList } from './components/EmptyList';
 
 
 interface ITasks {
@@ -33,9 +34,9 @@ function App() {
   const [taskList, setTaskList] = useState(Array<ITasks>)
   const [newTask, setNewTask] = useState('');
 
-  const todoCount = taskList.length;
+  const taskCount = taskList.length;
 
-  const todoCountDone = taskList.reduce((completed, task) => {
+  const taskCountDone = taskList.reduce((completed, task) => {
     return completed + Number(task.status)
   }, 0)
 
@@ -70,20 +71,23 @@ function App() {
         <div className={styles.info}>
           <div className={styles.tasksCreated}>
             <p>Tarefas Criadas</p>
-            <span className={styles.count}>0</span>
+            <span className={styles.count}>{taskCount}</span>
           </div>
           <div className={styles.taskDone}>
             <p>Concluidas</p>
-            <span className={styles.count}>0</span>
+            <span className={styles.count}>{taskCountDone}</span>
           </div>
 
         </div>
 
-        {taskList.map(task => {
-          return (
-            <Task task={task} key={task.id} taskListEmpty={taskListEmpty} />
-          )
-        })}
+        {taskListEmpty ?
+          <EmptyList />
+          :
+          taskList.map(task => {
+            return (
+              <Task task={task} key={task.id} />
+            )
+          })}
       </div>
     </div >
   )
