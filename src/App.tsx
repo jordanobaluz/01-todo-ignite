@@ -1,15 +1,18 @@
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { NewTask } from './components/NewTask'
+import { Task } from './components/Task'
+
+import { v4 as uuidv4 } from 'uuid';
 
 import logoToDo from './assets/logoToDo.svg'
 import './global.css'
 import styles from './App.module.css'
-import { Task } from './components/Task'
+
 
 interface ITasks {
   id: string;
-  taskName: string;
-  done: boolean;
+  taskContent: string;
+  status: boolean;
 }
 
 const taskApp = [{
@@ -27,6 +30,32 @@ const taskApp = [{
 }]
 
 function App() {
+  const [taskList, setTaskList] = useState(Array<ITasks>)
+  const [newTask, setNewTask] = useState('');
+
+  const todoCount = taskList.length;
+
+  const todoCountDone = taskList.reduce((completed, task) => {
+    return completed + Number(task.status)
+  }, 0)
+
+  const taskListEmpty = taskList.length === 0;
+
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault()
+    setTaskList([...taskList, {
+      id: uuidv4(),
+      taskContent: newTask,
+      status: false
+    }])
+    setNewTask('')
+  }
+
+  function handleNewTask(event: ChangeEvent<HTMLInputElement>) {
+    event.target.setCustomValidity('')
+    setNewTask(event.target.value)
+  }
+
   return (
     <div className="App">
       <header className={styles.todoHeader}>
@@ -34,7 +63,7 @@ function App() {
       </header>
 
       <div className={styles.createNewTask}>
-        <NewTask tasks={taskApp} />
+        <NewTask handleNewTask={handleNewTask} handleSubmit={handleSubmit} newTask={newTask} />
       </div>
 
       <div className={styles.todoContent}>
@@ -50,9 +79,9 @@ function App() {
 
         </div>
 
-        {taskApp.map(tasks => {
+        {taskList.map(task => {
           return (
-            <Task key={tasks.id} id={tasks.id} name={tasks.nameTask} isCheck={tasks.isCheck} />
+            <Task task={task} key={task.id} taskListEmpty={taskListEmpty} />
           )
         })}
       </div>
