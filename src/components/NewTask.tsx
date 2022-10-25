@@ -1,7 +1,6 @@
 import styles from './NewTask.module.css';
 import { PlusCircle } from 'phosphor-react';
-import { ChangeEvent, FormEvent, useState } from 'react';
-
+import { InvalidEvent } from 'react';
 
 interface iHandleNewTask {
     handleNewTask: (taskContent: any) => void;
@@ -10,6 +9,11 @@ interface iHandleNewTask {
 }
 
 export function NewTask(taskApp: iHandleNewTask) {
+
+    function handleInvalidInput(event: InvalidEvent<HTMLInputElement>) {
+        event.target.setCustomValidity("Por favor digite uma tarefa")
+    }
+
     return (
         <form onSubmit={taskApp.handleSubmit} className={styles.newTask}>
             <input
@@ -18,6 +22,8 @@ export function NewTask(taskApp: iHandleNewTask) {
                 value={taskApp.newTask}
                 onChange={taskApp.handleNewTask}
                 placeholder='Adicione uma nova tarefa'
+                onInvalid={handleInvalidInput}
+                required
             />
             <button type='submit'>
                 <PlusCircle size={16} className={styles.buttonPlus} />
