@@ -57,6 +57,18 @@ function App() {
     setNewTask(event.target.value)
   }
 
+  function changeTaskStatus(id: string) {
+    const todoListWithChangedTask = taskList.map((task) => {
+      if (task.id === id) {
+        task.status = !task.status
+        return task
+      }
+      return task
+    })
+
+    setTaskList(todoListWithChangedTask)
+  }
+
   return (
     <div className="App">
       <header className={styles.todoHeader}>
@@ -85,7 +97,7 @@ function App() {
           :
           taskList.map(task => {
             return (
-              <Task task={task} key={task.id} />
+              <Task task={task} key={task.id} changeTaskStatus={changeTaskStatus} />
             )
           })}
       </div>

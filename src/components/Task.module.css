@@ -81,6 +81,17 @@ input[type="checkbox"]:checked {
     border: none;
 }
 
+.taskChecked {
+    line-height: var(--line-height);
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
+
+.taskUnchecked {
+    line-height: var(--line-height);
+    color: var(--gray-100);
+}
+
 .listTask button {
     background: transparent;
     border: 0;
