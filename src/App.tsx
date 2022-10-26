@@ -69,6 +69,14 @@ function App() {
     setTaskList(todoListWithChangedTask)
   }
 
+  function deleteTask(id: string) {
+    const todoListWithoutDeletedTask = taskList.filter((task) => {
+      return task.id !== id
+    })
+
+    setTaskList(todoListWithoutDeletedTask)
+  }
+
   return (
     <div className="App">
       <header className={styles.todoHeader}>
@@ -97,7 +105,7 @@ function App() {
           :
           taskList.map(task => {
             return (
-              <Task task={task} key={task.id} changeTaskStatus={changeTaskStatus} />
+              <Task task={task} key={task.id} changeTaskStatus={changeTaskStatus} deleteTask={deleteTask} />
             )
           })}
       </div>

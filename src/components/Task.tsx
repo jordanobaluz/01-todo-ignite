@@ -8,11 +8,16 @@ interface ITasks {
         status: boolean;
     }
     changeTaskStatus: (id: string) => void;
+    deleteTask: (id: string) => void;
 }
 
-export function Task({ task, changeTaskStatus }: ITasks) {
+export function Task({ task, changeTaskStatus, deleteTask }: ITasks) {
     function handleChangeStatus() {
         changeTaskStatus(task.id)
+    }
+
+    function handleDeleteTask() {
+        deleteTask(task.id)
     }
 
     return (
@@ -20,7 +25,7 @@ export function Task({ task, changeTaskStatus }: ITasks) {
             <div className={styles.listTask}>
                 <input type='checkbox' className={styles.checkbox} onClick={handleChangeStatus} />
                 <p className={task.status ? styles.taskChecked : styles.taskUnchecked}>{task.taskContent}</p>
-                <button>
+                <button onClick={handleDeleteTask}>
                     <Trash className={styles.trash} size={32} />
                 </button>
             </div>
