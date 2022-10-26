@@ -80,7 +80,7 @@ function App() {
   return (
     <div className="App">
       <header className={styles.todoHeader}>
-        <img src={logoToDo} alt="logo da aplicação do do" />
+        <img src={logoToDo} alt="logo da aplicação do todo" />
       </header>
 
       <div className={styles.createNewTask}>

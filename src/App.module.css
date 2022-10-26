@@ -1,41 +1,30 @@
 .todoHeader {
-    position: absolute;
-    height: 200px;
-    left: 0px;
-    right: 0px;
-    top: 0px;
     background: var(--gray-700);
+    display: flex;
+    justify-content: center;
+    padding: 5.5rem 0 6.5rem;
 }
 
-.todoHeader img {
+.createNewTask {
+    display: flex;
+    width: 100%;
     position: absolute;
-    width: 126px;
-    height: 48px;
-    left: 657px;
-    top: 72px;
+    top: 12.5rem;
+    padding: 0 5%;
 }
 
 .newTask {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px;
-    gap: 8px;
-}
-
-.createNewTask {
-    position: absolute;
-    width: 736px;
-    height: 54px;
-    left: calc(50% - 736px/2);
-    top: 10.5rem;
+    width: 100%;
 }
 
 .todoContent {
-    position: absolute;
-    width: 736px;
-    height: 28rem;
-    left: calc(50% - 736px/2);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5% 5%;
     top: 20rem;
 }
 
@@ -45,9 +34,6 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 1rem;
-
-    width: 46rem;
-    height: 1.19rem;
 
     flex: none;
     order: 0;
@@ -117,4 +103,10 @@
     line-height: 1.063rem;
 
     color: var(--purple);
+}
+
+@media (max-width: 1150px) {
+    html {
+        font-size: 87.5%;
+    }
 }
