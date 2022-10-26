@@ -75,7 +75,7 @@ function App() {
           </div>
           <div className={styles.taskDone}>
             <p>Concluidas</p>
-            <span className={styles.count}>{taskCountDone}</span>
+            <span className={styles.count}>{taskCountDone} de {taskCount}</span>
           </div>
 
         </div>
