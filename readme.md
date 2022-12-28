@@ -1,3 +1,5 @@
+[![](https://media0.giphy.com/media/BAN80s8mTIfEr5Dqds/giphy.gif?cid=790b7611492de69b987947ae05cac28ba07f1b876fefeadb&rid=giphy.gif&ct=g)](https://media0.giphy.com/media/BAN80s8mTIfEr5Dqds/giphy.gif?cid=790b7611492de69b987947ae05cac28ba07f1b876fefeadb&rid=giphy.gif&ct=g)
+
 # ToDo List
 
 O projeto ToDo List é uma aplicação web que permite ao usuário criar uma lista de tarefas e marcá-las como concluídas quando necessário. O projeto foi desenvolvido com o objetivo de permitir que o usuário mantenha o controle de suas tarefas e gerencie o seu tempo de forma mais eficiente.
